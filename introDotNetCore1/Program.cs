@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -13,6 +13,7 @@ namespace introDotNetCore1
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Hello World!");
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -20,7 +21,7 @@ namespace introDotNetCore1
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>();//neyi ekleyip neyi eklemeyeceğimizi startup'tan seçeriz.
                 });
     }
 }
