@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
+using introDotNetCore1.Models;
 
 namespace introDotNetCore1.Controllers
 {
@@ -12,10 +14,22 @@ namespace introDotNetCore1.Controllers
             return View(); //Bütün Viewler'ın bulunduğu bir yer olmak zorunda, bunun için bir Views Klasörü açıldı.
             //kullanıcıya response olarak dönebilecek bütün veritiplerini kapsar.Yani Result bilgisi IActionResult
         }
-
+        [HttpGet] //forma girilen değerlerin getirilmesi için
         public IActionResult UrunEkle()
         {
             return View();  
+        }
+
+        [HttpPost]
+        public IActionResult UrunEkle(Urun urun)
+        {
+            if (ModelState.IsValid) //bütün kurallara uyuyorsanız; modelimizi denetleme. yani ürün şartları sağlandı mı?
+            {
+                //koleksiyona ekle... mesela
+
+                return RedirectToAction(nameof(Index));   //şu action'a yönlendir..
+            }
+            return View();
         }
     }
 }
