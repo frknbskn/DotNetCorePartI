@@ -1,4 +1,5 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
     Layout = null;
 }
@@ -25,6 +26,8 @@
             <span> İyi Günler.. </span>
             
         }
+        
     </p>
+    <a asp-action="UrunEkle" asp-controller="Home">Ürün ekle</a> @* elementine .net core'a ait iki adet attiribute geldi. Bunlar sayesinde render edecek.*@
 </body>
 </html>

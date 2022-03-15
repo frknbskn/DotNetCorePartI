@@ -15,7 +15,7 @@ namespace introDotNetCore1.Controllers
 
         public IActionResult UrunEkle()
         {
-
+            return View();  
         }
     }
 }
